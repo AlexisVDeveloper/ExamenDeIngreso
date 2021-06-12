@@ -22,7 +22,7 @@ namespace Exam
 
         private void AddItemToList() {
             foreach (var quotation in _quotations) {
-                string item = $"ID: {quotation.IdentificationNumber} Date: {quotation.Date} Seller: {quotation.SellerCode} Total: {quotation.CostQuotation}" ;
+                string[] item = { $"{quotation.IdentificationNumber}", $"{quotation.Date}", $"{quotation.SellerCode}", $"{quotation.CostQuotation}" } ;
                 _view.AddItemToList(item);
             }
         }

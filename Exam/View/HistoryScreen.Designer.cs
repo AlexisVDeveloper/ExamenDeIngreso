@@ -30,10 +30,19 @@ namespace Exam.View
         private void InitializeComponent()
         {
             this.quotationList = new System.Windows.Forms.ListView();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Seller = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // quotationList
             // 
+            this.quotationList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID,
+            this.Date,
+            this.Seller,
+            this.Total});
             this.quotationList.HideSelection = false;
             this.quotationList.Location = new System.Drawing.Point(5, 5);
             this.quotationList.Name = "quotationList";
@@ -41,7 +50,24 @@ namespace Exam.View
             this.quotationList.TabIndex = 0;
             this.quotationList.TileSize = new System.Drawing.Size(20, 20);
             this.quotationList.UseCompatibleStateImageBehavior = false;
+            this.quotationList.View = System.Windows.Forms.View.Details;
             this.quotationList.VirtualListSize = 20;
+            // 
+            // ID
+            // 
+            this.ID.Text = "ID";
+            // 
+            // Date
+            // 
+            this.Date.Text = "Date";
+            // 
+            // Seller
+            // 
+            this.Seller.Text = "Seller";
+            // 
+            // Total
+            // 
+            this.Total.Text = "Total";
             // 
             // HistoryScreen
             // 
@@ -61,5 +87,9 @@ namespace Exam.View
         #endregion
 
         private System.Windows.Forms.ListView quotationList;
+        private System.Windows.Forms.ColumnHeader ID;
+        private System.Windows.Forms.ColumnHeader Date;
+        private System.Windows.Forms.ColumnHeader Seller;
+        private System.Windows.Forms.ColumnHeader Total;
     }
 }

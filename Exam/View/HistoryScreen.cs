@@ -20,8 +20,8 @@ namespace Exam.View
             _historyController = new HistoryController(this);
         }
 
-        public void AddItemToList(string item) { 
-            var listViewItem = new ListViewItem(item);
+        public void AddItemToList(string[] items) {
+            var listViewItem = new ListViewItem(items);
             quotationList.Items.Add(listViewItem);
         }
     }
