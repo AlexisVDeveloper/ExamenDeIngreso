@@ -18,6 +18,12 @@ namespace Exam
         {
             InitializeComponent();
             _mainController = new MainController(this);
+
+            if (shirtRB.Checked)
+            {
+                var stock = _mainController.GetStock(shirtRB.Checked, tShirtCB.Checked, maoNeckCB.Checked);
+                unitsInStockTB.Text = $"{ stock }";
+            }
         }
 
         public void SetStore(string storeName, string storeDir) {
@@ -37,6 +43,21 @@ namespace Exam
             totalTB.Text = $"{ total }";
         }
 
+        private bool ValidateData() {
+            if (costTB.Text == "")
+            {
+                MessageBox.Show("Por Favor, complete el precio unitario.", "Error", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
+                return false;
+            }
+            else if (countTB.Text == "")
+            {
+                MessageBox.Show("Por Favor, complete la cantidad de unidades.", "Error", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+
         private void historyLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
@@ -44,48 +65,45 @@ namespace Exam
 
         private void quotationBtn_Click(object sender, EventArgs e)
         {
-            int count = Int32.Parse(countTB.Text);
-            float cost = float.Parse(costTB.Text);
+            if (!ValidateData())
+                return;
 
-            if (tShirtCB.Checked)
-                _mainController.QuotationShirt(premiumRB.Checked, cost, count, tShirtCB.Checked, maoNeckCB.Checked);
-            else
-                _mainController.QuotationJean(premiumRB.Checked, cost, count, jeanSkinnyCB.Checked);
+            try
+            {
+                int countInStock = Int32.Parse(unitsInStockTB.Text);
+                int count = Int32.Parse(countTB.Text);
+                float cost = float.Parse(costTB.Text);
+
+                if (count > countInStock) {
+                    MessageBox.Show("La cantidad pedida sobrepasa el stock actual. Por favor elija otra cantidad.", "Error", MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (tShirtCB.Checked)
+                    _mainController.QuotationShirt(premiumRB.Checked, cost, count, tShirtCB.Checked, maoNeckCB.Checked);
+                else
+                    _mainController.QuotationJean(premiumRB.Checked, cost, count, jeanSkinnyCB.Checked);
+            }
+            catch { 
+                    MessageBox.Show("Se produjo un error. Por favor vuelva a intentarlo.", "Error", MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
+            }
         }
 
-        private void standarRB_CheckedChanged(object sender, EventArgs e)
+        private void shirt_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (shirtRB.Checked) {
+                var stock = _mainController.GetStock(shirtRB.Checked, tShirtCB.Checked, maoNeckCB.Checked);
+                unitsInStockTB.Text = $"{ stock }";
+            }
         }
 
-        private void premiumRB_CheckedChanged(object sender, EventArgs e)
+        private void jean_CheckedChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void shirtRB_CheckedChanged(object sender, EventArgs e)
-        {
-            jeanRB.Checked = false;
-        }
-
-        private void jeanRB_CheckedChanged(object sender, EventArgs e)
-        {
-            shirtRB.Checked = false;
-        }
-
-        private void tShirtCB_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void jeanSkinnyCB_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void maoNeckCB_CheckedChanged(object sender, EventArgs e)
-        {
-
+            if (jeanRB.Checked)
+            {
+                var stock = _mainController.GetStock(shirtRB.Checked, isSkinny: jeanSkinnyCB.Checked);
+                unitsInStockTB.Text = $"{ stock }";
+            }
         }
 
         private void costTB_KeyPress(object sender, KeyPressEventArgs e)
@@ -111,5 +129,6 @@ namespace Exam
                 e.Handled = true;
             }
         }
+
     }
 }

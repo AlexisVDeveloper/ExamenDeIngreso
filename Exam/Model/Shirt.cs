@@ -12,6 +12,9 @@ namespace Exam.Model
         private bool _isTShirt;
         private bool _isMaoNeck;
 
+        public bool IsTShirt { get { return _isTShirt; } }
+        public bool IsMaoNeck { get { return _isMaoNeck; } }
+
         public Shirt(int unitsStock, bool isTShirt, bool isMaoNeck)
             : base(unitsStock) {
             _isTShirt = isTShirt;

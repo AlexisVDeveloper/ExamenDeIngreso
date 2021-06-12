@@ -10,6 +10,8 @@ namespace Exam.Model
     {
         private bool _isSkinny;
 
+        public bool IsSkinny { get { return _isSkinny; } }
+
         public Jean(int unitsStock, bool isSkinny) 
             : base(unitsStock) {
             _isSkinny = isSkinny;

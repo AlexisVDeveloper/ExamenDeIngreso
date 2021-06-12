@@ -22,10 +22,9 @@ namespace Exam.Model
             _sellerCode = sellerCode;
             _cloathing = clothing;
             _clothingUnits = clothingUnits;
+            _date = DateTime.Now.ToString();
 
             _costQuotation = _cloathing.GetTotalCost() * _clothingUnits;
-
-            //TODO GET DATE
         }
     }
 }

@@ -18,8 +18,6 @@ namespace Exam
         private int[] _shirtCount = { 200, 300, 150, 350 }; 
         private int[] _jeanCount = { 1500, 500 };
 
-        private int _currentStock;
-
         public MainController(MainScreen view) {
             _view = view;
 
@@ -36,26 +34,22 @@ namespace Exam
             newCloath.Cost = cost;
 
             Quotation quotation = new Quotation(0, _seller.SellerCode, newCloath, count);
-            var total = quotation.CalculateQuotation();
-            _view.SetQuotation(total);
-
-            _seller.AddQuotation();
+            _view.SetQuotation(quotation.CostQuotation);
+            _seller.AddQuotation(quotation);
         }
 
-        public void QuotationJean(bool isPremium, float cost, int count, bool skinny) { 
-            
+        public void QuotationJean(bool isPremium, float cost, int count, bool isSkinny) {
+            var newCloath = new Jean(0, isSkinny);
+            newCloath.IsPremium = isPremium;
+            newCloath.Cost = cost;
+
+            Quotation quotation = new Quotation(0, _seller.SellerCode, newCloath, count);
+            _view.SetQuotation(quotation.CostQuotation);
+            _seller.AddQuotation(quotation);
         }
 
-        private void LookStock(bool isShirt) {
-            try
-            {
-                _currentStock = _store.GetStockFor();
-                _view.SetStockUnits(_currentStock);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
+        public int GetStock(bool isShirt, bool isTShirt = false, bool isMaoNeck = false, bool isSkinny = false) {
+            return _store.LookForStock(isShirt, isTShirt, isMaoNeck, isSkinny);
         }
 
         private void CreateProperties() {

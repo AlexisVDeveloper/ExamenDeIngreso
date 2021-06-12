@@ -22,15 +22,13 @@ namespace Exam.Model
             _clothings = new List<Clothing>();
         }
 
-        public int GetStockFor() {
-            if (clothing == null) throw new ArgumentNullException("The cloathing you looking is null."); 
-                
-            foreach (var clo in _clothings) { 
-                if(clothing.Equals(clo)) 
-                    return clothing.UnitsInStock;
-            }
+        public int LookForStock(bool isShirt, bool isTShirt = false, bool isMaoNeck = false, bool isSkinny = false) {
+            var currentClotings = _clothings;
 
-            throw new ArgumentException("There're not stock for this clothing.");
+            if (isShirt) 
+                return currentClotings.Where(c => c is Shirt).Select(c => (Shirt)c).Where(c => c.IsTShirt == isTShirt && c.IsMaoNeck == isMaoNeck ).First().UnitsInStock;
+            else
+                return currentClotings.Where(c => c is Jean).Select(c => (Jean)c).Where(c => c.IsSkinny == isSkinny).First().UnitsInStock;
         }
 
         public void SetClothing(Clothing clothing) {

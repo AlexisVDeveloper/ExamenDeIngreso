@@ -23,7 +23,7 @@ namespace Exam.Model
         public virtual float GetTotalCost() {
             /*  Si la calidad de la prenda es Premium: el precio aumenta en un 30%. 
                 Si la calidad de la prenda es Standard: el precio no se modifica. */
-            _cost += _isPremium ? 0 : _cost * 0.3f; 
+            _cost += _isPremium ? _cost * 0.3f : 0; 
             return _cost;
         }
     }

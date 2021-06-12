@@ -95,7 +95,7 @@ namespace Exam
             this.jeanSkinnyCB.TabIndex = 4;
             this.jeanSkinnyCB.Text = "Chupín";
             this.jeanSkinnyCB.UseVisualStyleBackColor = true;
-            this.jeanSkinnyCB.CheckedChanged += new System.EventHandler(this.jeanSkinnyCB_CheckedChanged);
+            this.jeanSkinnyCB.CheckedChanged += new System.EventHandler(this.jean_CheckedChanged);
             // 
             // maoNeckCB
             // 
@@ -107,7 +107,7 @@ namespace Exam
             this.maoNeckCB.TabIndex = 3;
             this.maoNeckCB.Text = "Cuello Mao";
             this.maoNeckCB.UseVisualStyleBackColor = true;
-            this.maoNeckCB.CheckedChanged += new System.EventHandler(this.maoNeckCB_CheckedChanged);
+            this.maoNeckCB.CheckedChanged += new System.EventHandler(this.shirt_CheckedChanged);
             // 
             // tShirtCB
             // 
@@ -119,7 +119,7 @@ namespace Exam
             this.tShirtCB.TabIndex = 2;
             this.tShirtCB.Text = "Manga Corta";
             this.tShirtCB.UseVisualStyleBackColor = true;
-            this.tShirtCB.CheckedChanged += new System.EventHandler(this.tShirtCB_CheckedChanged);
+            this.tShirtCB.CheckedChanged += new System.EventHandler(this.shirt_CheckedChanged);
             // 
             // jeanRB
             // 
@@ -132,7 +132,7 @@ namespace Exam
             this.jeanRB.TabStop = true;
             this.jeanRB.Text = "Pantalón";
             this.jeanRB.UseVisualStyleBackColor = true;
-            this.jeanRB.CheckedChanged += new System.EventHandler(this.jeanRB_CheckedChanged);
+            this.jeanRB.CheckedChanged += new System.EventHandler(this.jean_CheckedChanged);
             // 
             // shirtRB
             // 
@@ -146,7 +146,7 @@ namespace Exam
             this.shirtRB.TabStop = true;
             this.shirtRB.Text = "Camisa";
             this.shirtRB.UseVisualStyleBackColor = true;
-            this.shirtRB.CheckedChanged += new System.EventHandler(this.shirtRB_CheckedChanged);
+            this.shirtRB.CheckedChanged += new System.EventHandler(this.shirt_CheckedChanged);
             // 
             // unitsBox
             // 
@@ -299,7 +299,6 @@ namespace Exam
             this.premiumRB.TabStop = true;
             this.premiumRB.Text = "Premium";
             this.premiumRB.UseVisualStyleBackColor = true;
-            this.premiumRB.CheckedChanged += new System.EventHandler(this.premiumRB_CheckedChanged);
             // 
             // standarRB
             // 
@@ -313,7 +312,6 @@ namespace Exam
             this.standarRB.TabStop = true;
             this.standarRB.Text = "Standard";
             this.standarRB.UseVisualStyleBackColor = true;
-            this.standarRB.CheckedChanged += new System.EventHandler(this.standarRB_CheckedChanged);
             // 
             // costCountBox
             // 
