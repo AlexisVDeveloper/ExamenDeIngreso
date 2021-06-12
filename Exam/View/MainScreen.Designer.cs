@@ -220,8 +220,8 @@ namespace Exam
             this.dirStoreLbl.AutoSize = true;
             this.dirStoreLbl.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dirStoreLbl.ForeColor = System.Drawing.Color.Purple;
-            this.dirStoreLbl.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.dirStoreLbl.Location = new System.Drawing.Point(348, 9);
+            this.dirStoreLbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dirStoreLbl.Location = new System.Drawing.Point(350, 9);
             this.dirStoreLbl.Name = "dirStoreLbl";
             this.dirStoreLbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dirStoreLbl.Size = new System.Drawing.Size(122, 22);
