@@ -1,0 +1,10 @@
+C:\Users\PC MASTER RACE\Desktop\QuarkAcademy\Exam\Exam\Exam\bin\Debug\Exam.exe.config
+C:\Users\PC MASTER RACE\Desktop\QuarkAcademy\Exam\Exam\Exam\bin\Debug\Exam.exe
+C:\Users\PC MASTER RACE\Desktop\QuarkAcademy\Exam\Exam\Exam\bin\Debug\Exam.pdb
+C:\Users\PC MASTER RACE\Desktop\QuarkAcademy\Exam\Exam\Exam\obj\Debug\Exam.csproj.AssemblyReference.cache
+C:\Users\PC MASTER RACE\Desktop\QuarkAcademy\Exam\Exam\Exam\obj\Debug\Exam.Properties.Resources.resources
+C:\Users\PC MASTER RACE\Desktop\QuarkAcademy\Exam\Exam\Exam\obj\Debug\Exam.csproj.GenerateResource.cache
+C:\Users\PC MASTER RACE\Desktop\QuarkAcademy\Exam\Exam\Exam\obj\Debug\Exam.csproj.CoreCompileInputs.cache
+C:\Users\PC MASTER RACE\Desktop\QuarkAcademy\Exam\Exam\Exam\obj\Debug\Exam.exe
+C:\Users\PC MASTER RACE\Desktop\QuarkAcademy\Exam\Exam\Exam\obj\Debug\Exam.pdb
+C:\Users\PC MASTER RACE\Desktop\QuarkAcademy\Exam\Exam\Exam\obj\Debug\Exam.MainScreen.resources
