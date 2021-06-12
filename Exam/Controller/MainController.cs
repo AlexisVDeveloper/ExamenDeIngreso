@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Exam.Model;
+using Exam.View;
+using Exam.Engine;
 
 namespace Exam
 {
@@ -14,6 +16,7 @@ namespace Exam
         private Seller _seller;
 
         private MainScreen _view;
+        private HistoryScreen _historyView;
 
         private int[] _shirtCount = { 200, 300, 150, 350 }; 
         private int[] _jeanCount = { 1500, 500 };
@@ -33,9 +36,13 @@ namespace Exam
             newCloath.IsPremium = isPremium;
             newCloath.Cost = cost;
 
-            Quotation quotation = new Quotation(0, _seller.SellerCode, newCloath, count);
+            int index = _seller.GetHistoryQuotation().Count + 1;
+
+            Quotation quotation = new Quotation(index, _seller.SellerCode, newCloath, count);
             _view.SetQuotation(quotation.CostQuotation);
             _seller.AddQuotation(quotation);
+
+            SaveLoad<List<Quotation>>.SaveJSON(_seller.GetHistoryQuotation());
         }
 
         public void QuotationJean(bool isPremium, float cost, int count, bool isSkinny) {
@@ -43,13 +50,22 @@ namespace Exam
             newCloath.IsPremium = isPremium;
             newCloath.Cost = cost;
 
-            Quotation quotation = new Quotation(0, _seller.SellerCode, newCloath, count);
+            int index = _seller.GetHistoryQuotation().Count + 1;
+
+            Quotation quotation = new Quotation(index, _seller.SellerCode, newCloath, count);
             _view.SetQuotation(quotation.CostQuotation);
             _seller.AddQuotation(quotation);
+
+            SaveLoad<List<Quotation>>.SaveJSON(_seller.GetHistoryQuotation());
         }
 
         public int GetStock(bool isShirt, bool isTShirt = false, bool isMaoNeck = false, bool isSkinny = false) {
             return _store.LookForStock(isShirt, isTShirt, isMaoNeck, isSkinny);
+        }
+
+        public void ShowHistoryScreen() {
+            _historyView = new HistoryScreen();
+            _historyView.Show();
         }
 
         private void CreateProperties() {

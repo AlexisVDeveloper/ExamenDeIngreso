@@ -27,8 +27,7 @@ namespace Exam
         }
 
         public void SetStore(string storeName, string storeDir) {
-            storeNameLbl.Text = storeName;
-            dirStoreLbl.Text = storeDir;
+            storeNameLbl.Text = $"{storeName} - {storeDir}";
         }
 
         public void SetSeller(string sellerName, string sellerCode) {
@@ -60,7 +59,7 @@ namespace Exam
 
         private void historyLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            _mainController.ShowHistoryScreen();
         }
 
         private void quotationBtn_Click(object sender, EventArgs e)

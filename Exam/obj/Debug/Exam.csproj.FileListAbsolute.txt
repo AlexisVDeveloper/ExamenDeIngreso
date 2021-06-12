@@ -8,3 +8,7 @@ C:\Users\PC MASTER RACE\Desktop\QuarkAcademy\Exam\Exam\Exam\obj\Debug\Exam.cspro
 C:\Users\PC MASTER RACE\Desktop\QuarkAcademy\Exam\Exam\Exam\obj\Debug\Exam.exe
 C:\Users\PC MASTER RACE\Desktop\QuarkAcademy\Exam\Exam\Exam\obj\Debug\Exam.pdb
 C:\Users\PC MASTER RACE\Desktop\QuarkAcademy\Exam\Exam\Exam\obj\Debug\Exam.MainScreen.resources
+C:\Users\PC MASTER RACE\Desktop\QuarkAcademy\Exam\Exam\Exam\obj\Debug\Exam.View.HistoryScreen.resources
+C:\Users\PC MASTER RACE\Desktop\QuarkAcademy\Exam\Exam\Exam\bin\Debug\Newtonsoft.Json.dll
+C:\Users\PC MASTER RACE\Desktop\QuarkAcademy\Exam\Exam\Exam\bin\Debug\Newtonsoft.Json.xml
+C:\Users\PC MASTER RACE\Desktop\QuarkAcademy\Exam\Exam\Exam\obj\Debug\Exam.csproj.CopyComplete
